@@ -1,0 +1,31 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: POST-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/capstone
+    username: root
+    password: Raki@308
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  eureka:
+    instance:
+      prefer-ip-address: true
+    client:
+      fetch-registry: true
+      register-with-eureka: true
+      service-url:
+        defaultZone: http://localhost:8761/eureka
+management:
+  tracing:
+    sampling:
+      probability: 1.0
